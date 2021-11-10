@@ -4,6 +4,7 @@ from helpers.database import *
 from helpers.hashpass import *
 from helpers.mailer import *
 from bson import json_util, ObjectId
+import datetime
 import json
 
 
@@ -49,6 +50,7 @@ def registerUser():
     
 
 def add_section():
+<<<<<<< HEAD
       section1=request.form.get("section")
     #   market=request.form.get("market")
       if section_items.find_one({"Status":"created"}):
@@ -69,6 +71,12 @@ def add_items():
     print(item_data)
     items.insert(item_data) 
     print("Done")
+=======
+      section=request.form.get("section")
+      market=request.form.get("market")
+      section_items.insert_one({"Section for items":str(section),"Market":str(market),"Date_created":datetime.datetime.now(),"Section":True})
+
+>>>>>>> 9f3aede1a9e8eb5fa8ca7434206c4bd690dc4abb
             
     
        

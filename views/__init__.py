@@ -3,16 +3,14 @@ from app import app
 from model import *
 
 
-
-
-
 @app.route('/', methods=["GET"])
 def home():
     if "username" in session:
-        return render_template('index.html')
+        section=section_items.find({"Section":True})
+        return render_template('index.html',section=section)
     else:
-        sections=section_items.find_one({"Status":"created"})
-        return render_template('login.html',sections=sections)
+        
+        return render_template('login.html')
 
 # Register new user
 @app.route('/register', methods=["GET", "POST"])

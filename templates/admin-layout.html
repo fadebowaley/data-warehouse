@@ -38,7 +38,6 @@
 
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
-
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
         <a class="nav-link" href="/">
@@ -509,15 +508,14 @@
       <div class="modal-body">
         <form>
 
-        <div class="input-group mb-3">
+      <div class="input-group mb-3">
   <div class="input-group-prepend">
     <label class="input-group-text" for="inputGroupSelect01">Section </label>
   </div>
   <select class="custom-select" id="inputGroupSelect01">
-  
-    <option value="1"></option>
-  
-    
+    {% for sections in section %}
+    <option value="6">{{ sections['Section for items'] }}</option>
+    {% endfor %}
   </select>
 </div>
 
