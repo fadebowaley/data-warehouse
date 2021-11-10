@@ -103,6 +103,7 @@ def table_users():
 def table_sections():
     return render_template("table_sections.html")
 
+
 @app.route('/add_section', methods=['GET','POST'])
 def addsection():
    if request.method=='POST':
