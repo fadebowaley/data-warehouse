@@ -14,6 +14,7 @@ app.config['MAIL_PASSWORD'] =  'possible12' #password
 # app.config['MAIL_PASSWORD'] = os.environ['MAIL_PASSWORD'] #password
 app.config['MAIL_USE_TLS'] = True #security type
 app.config['MAIL_USE_SSL'] = False #security type
+app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 #database connection parameters
 # connection_params = {

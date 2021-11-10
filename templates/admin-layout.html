@@ -469,8 +469,7 @@
     </div>
   </div>
 </div>
-
-        <!-- /add report modal-->
+<!-- /add report modal-->
 <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -485,18 +484,13 @@
 
         <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <label class="input-group-text" for="inputGroupSelect01">Sections </label>
+    <label class="input-group-text" for="inputGroupSelect01">Section </label>
   </div>
   <select class="custom-select" id="inputGroupSelect01">
-
-    <option selected>Choose...</option>
-    <option value="1">Tomatoe Section </option>
-    <option value="1">Fresh Pepper </option>
-    <option value="2">Onion Section </option>
-    <option value="3">Fruit & Vegetables</option>
-    <option value="3">Grains </option>
-    <option value="3">Okro</option>
-
+  
+    <option value="1"></option>
+  
+    
   </select>
 </div>
 
@@ -571,13 +565,12 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
-
+  <form action="/add_section" method="POST">
   <div class="input-group">
   <div class="input-group-prepend">
     <span class="input-group-text" id="">Section Name </span>
   </div>
-  <input type="text" class="form-control">  
+  <input type="text" class="form-control" name="section">  
 </div>
 <div>
 <br>
@@ -586,16 +579,14 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="">Market: </span>
   </div>
-  <input type="text" class="form-control">  
+  <input type="text" class="form-control" name="market" required>  
 </div>
-      
-
-         
-        </form>
+        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success">Add section</button>
+        <button type="submit" class="btn btn-success">Add section</button>
+      </form>
       </div>
     </div>
   </div>
