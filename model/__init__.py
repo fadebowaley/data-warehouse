@@ -4,6 +4,7 @@ from helpers.database import *
 from helpers.hashpass import *
 from helpers.mailer import *
 from bson import json_util, ObjectId
+import datetime
 import json
 
 
@@ -48,14 +49,10 @@ def registerUser():
     print("Done")
     
 def add_section():
-      section1=request.form.get("section")
-      if section_items.find_one({"Status":"created"}):
-            section=section_items.find_one({"Status":"created"})
-            s=section['Section']
-            s.append(str(section1))
-            section_items.update_one({"Status":"created"},{"$set":{"Section":s}})   
-      else:
-            section_items.insert_one({"Section":[str(section)],"Status":"created"})
+      section=request.form.get("section")
+      market=request.form.get("market")
+      section_items.insert_one({"Section for items":str(section),"Market":str(market),"Date_created":datetime.datetime.now(),"Section":True})
+
             
     
        
