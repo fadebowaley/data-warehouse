@@ -311,6 +311,12 @@
 
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal" ><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400">
                 </i>   Add reports    </a>
+
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal1" ><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400">
+                </i>   Add Sections   </a>
+                
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal2" ><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400">
+                </i>   Add items   </a>
                
                <a class="dropdown-item" href="#"> <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   Activity Log
@@ -363,7 +369,24 @@
 
         <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <label class="input-group-text" for="inputGroupSelect01">Categories </label>
+    <label class="input-group-text" for="inputGroupSelect01">Sections </label>
+  </div>
+  <select class="custom-select" id="inputGroupSelect01">
+
+    <option selected>Choose...</option>
+    <option value="1">Tomatoe Section </option>
+    <option value="1">Fresh Pepper </option>
+    <option value="2">Onion Section </option>
+    <option value="3">Fruit & Vegetables</option>
+    <option value="3">Grains </option>
+    <option value="3">Okro</option>
+
+  </select>
+</div>
+
+  <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Item name </label>
   </div>
   <select class="custom-select" id="inputGroupSelect01">
     <option selected>Choose...</option>
@@ -372,10 +395,22 @@
     <option value="3">Pepper</option>
   </select>
 </div>
+  <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Package Type</label>
+  </div>
+  <select class="custom-select" id="inputGroupSelect01">
+    <option selected>Choose...</option>
+    <option value="1">Basket</option>
+    <option value="2">Crate</option>
+    <option value="3">Big Bag</option>
+    <option value="3">small Bag</option>
+  </select>
+</div>
 
 <div class="input-group">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="">Item Name</span>
+    <span class="input-group-text" id="">Location</span>
   </div>
   <input type="text" class="form-control">  
 </div>
@@ -384,7 +419,25 @@
 </div>
 <div class="input-group">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="">Item Name</span>
+    <span class="input-group-text" id="">Number of Goods</span>
+  </div>
+  <input type="number" class="form-control">  
+</div>
+<div>
+<br>
+</div>
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="">Receiver: </span>
+  </div>  
+  <input type="text" class="form-control">  
+</div>
+<div>
+<br>
+</div>
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="">Vehicle number: </span>
   </div>
   <input type="text" class="form-control">  
 </div>
@@ -393,36 +446,159 @@
 </div>
 <div class="input-group">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="">Name of Truck: </span>
+    <span class="input-group-text" id="">Vehicle Type </span>
   </div>
   <input type="text" class="form-control">  
 </div>
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Name of Truck:</label>
-            <input type="text" class="form-control" id="recipient-name">
-          </div>
-
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Name of Item:</label>
-            <input type="text" class="form-control" id="recipient-name">
-          </div>
-
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Categories:</label>
-            <input type="text" class="form-control" id="recipient-name">
-          </div>
-          <div class="form-group">
-            <label for="message-text" class="col-form-label">remarks:</label>
-            <textarea class="form-control" id="message-text"></textarea>
-          </div>
+<div>
+<br>
+</div>
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="">Receiver: </span>
+  </div>
+  <input type="text" class="form-control">  
+</div>
+      
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Add report</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success">Add report</button>
       </div>
     </div>
   </div>
 </div>
 
         <!-- /add report modal-->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add items</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+
+        <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Sections </label>
+  </div>
+  <select class="custom-select" id="inputGroupSelect01">
+
+    <option selected>Choose...</option>
+    <option value="1">Tomatoe Section </option>
+    <option value="1">Fresh Pepper </option>
+    <option value="2">Onion Section </option>
+    <option value="3">Fruit & Vegetables</option>
+    <option value="3">Grains </option>
+    <option value="3">Okro</option>
+
+  </select>
+</div>
+
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="">item name </span>
+  </div>
+  <input type="text" class="form-control">  
+</div>
+<div>
+<br>
+</div>
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="">item name </span>
+  </div>
+  <input type="text" class="form-control">  
+</div>
+<div>
+<br>
+</div>
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="">item name </span>
+  </div>  
+  <input type="text" class="form-control">  
+</div>
+<div>
+<br>
+</div>
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="">item name </span>
+  </div>  
+  <input type="text" class="form-control">  
+</div>
+<div>
+<br>
+</div>
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="">item name </span>
+  </div>  
+  <input type="text" class="form-control">  
+</div>
+<div>
+<br>
+</div>
+
+      
+      </div>
+        </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success">Add report</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!-- /add report modal-->
+
+        <!-- add categories modal-->
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><b>Add Sections</b> </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+
+  <div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="">Section Name </span>
+  </div>
+  <input type="text" class="form-control">  
+</div>
+<div>
+<br>
+</div>
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="">Market: </span>
+  </div>
+  <input type="text" class="form-control">  
+</div>
+      
+
+         
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success">Add section</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!-- /add sections modal-->
