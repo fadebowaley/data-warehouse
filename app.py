@@ -8,6 +8,7 @@ from configuration import *
 
 
 
+
 if __name__ == "__main__":
 
     # app.config['SECRET_KEY'] = '@dem0l@333'  

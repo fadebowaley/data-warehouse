@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, url_for, session
+from flask import render_template, request, redirect, url_for, session,flash
 from app import app
 from model import *
 
@@ -11,7 +11,8 @@ def home():
     if "username" in session:
         return render_template('index.html')
     else:
-        return render_template('login.html')
+        sections=section_items.find_one({"Status":"created"})
+        return render_template('login.html',sections=sections)
 
 # Register new user
 @app.route('/register', methods=["GET", "POST"])
@@ -101,3 +102,10 @@ def table_users():
 @app.route('/table_sections', methods=["GET"])
 def table_sections():
     return render_template("table_sections.html")
+
+@app.route('/add_section', methods=['GET','POST'])
+def addsection():
+   if request.method=='POST':
+        add_section()
+        flash('you successfully create a section')
+   return redirect(url_for("home"))

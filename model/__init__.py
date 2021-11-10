@@ -46,3 +46,17 @@ def registerUser():
     users.insert(user_data)
     sendmail(subject="Registration for Flask Admin Boilerplate", sender="Flask Admin Boilerplate", recipient=user_data["email"], body="You successfully registered on Flask Admin Boilerplate")
     print("Done")
+    
+def add_section():
+      section1=request.form.get("section")
+      if section_items.find_one({"Status":"created"}):
+            section=section_items.find_one({"Status":"created"})
+            s=section['Section']
+            s.append(str(section1))
+            section_items.update_one({"Status":"created"},{"$set":{"Section":s}})   
+      else:
+            section_items.insert_one({"Section":[str(section)],"Status":"created"})
+            
+    
+       
+               
