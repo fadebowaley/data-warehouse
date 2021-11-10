@@ -2,7 +2,7 @@ from flask import render_template, request, redirect, url_for, session
 from app import app
 from model import *
 
-app.config['SECRET_KEY']=='steve2333'
+
 
 
 
@@ -61,20 +61,20 @@ def forgotpassword():
 def errorpage():
     return render_template("404.html")
 
-#Blank Page
-@app.route('/blank', methods=["GET"])
-def blank():
-    return render_template('blank.html')
+# #Blank Page
+# @app.route('/blank', methods=["GET"])
+# def blank():
+#     return render_template('blank.html')
 
-#Buttons Page
-@app.route('/buttons', methods=["GET"])
-def buttons():
-    return render_template("buttons.html")
+# #Buttons Page
+# @app.route('/buttons', methods=["GET"])
+# def buttons():
+#     return render_template("buttons.html")
 
-#Cards Page
-@app.route('/cards', methods=["GET"])
-def cards():
-    return render_template('cards.html')
+# #Cards Page
+# @app.route('/cards', methods=["GET"])
+# def cards():
+#     return render_template('cards.html')
 
 #Charts Page
 @app.route('/charts', methods=["GET"])
@@ -86,22 +86,18 @@ def charts():
 def tables():
     return render_template("tables.html")
 
-#Utilities-animation
-@app.route('/utilities-animation', methods=["GET"])
-def utilitiesanimation():
-    return render_template("utilities-animation.html")
+#Tables Page
+@app.route('/table_items', methods=["GET"])
+def table_items():
+    return render_template("table_items.html")
 
-#Utilities-border
-@app.route('/utilities-border', methods=["GET"])
-def utilitiesborder():
-    return render_template("utilities-border.html")
 
-#Utilities-color
-@app.route('/utilities-color', methods=["GET"])
-def utilitiescolor():
-    return render_template("utilities-color.html")
+#Tables Page
+@app.route('/table_users', methods=["GET"])
+def table_users():
+    return render_template("table_users.html")
 
-#utilities-other
-@app.route('/utilities-other', methods=["GET"])
-def utilitiesother():
-    return render_template("utilities-other.html")
+#Tables Page
+@app.route('/table_sections', methods=["GET"])
+def table_sections():
+    return render_template("table_sections.html")
