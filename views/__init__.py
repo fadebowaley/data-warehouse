@@ -10,9 +10,9 @@ app.config['SECRET_KEY']=='steve2333'
 def home():
     if "username" in session:
         section=section_items.find({"Section":True})
-        return render_template('index.html',section=section)
+        item=items.find_one({"Tomantos":True})
+        return render_template('index.html',section=section,item=item)
     else:
-        
         return render_template('login.html')
 
 # Register new user
@@ -37,7 +37,8 @@ def login():
             return render_template("login.html")
         else:
             return redirect(url_for("home"))
-
+    else:   
+         return redirect(url_for("home"))
 
 @app.route('/checkloginusername', methods=["POST"])
 def checkUserlogin():
@@ -88,34 +89,20 @@ def charts():
 def tables():
     return render_template("tables.html")
 
-#Utilities-animation
-@app.route('/utilities-animation', methods=["GET"])
-def utilitiesanimation():
-    return render_template("utilities-animation.html")
 
-#Utilities-border
-@app.route('/utilities-border', methods=["GET"])
-def utilitiesborder():
-    return render_template("utilities-border.html")
-
-#Utilities-color
-@app.route('/utilities-color', methods=["GET"])
-def utilitiescolor():
-    return render_template("utilities-color.html")
-
-#utilities-other
-@app.route('/utilities-other', methods=["GET"])
-def utilitiesother():
-    return render_template("utilities-other.html")
-
+# this function add sections to database
 @app.route('/add_section', methods=['GET','POST'])
 def addsection():
-   if request.method=='POST':
-        add_section()
-        flash('you successfully create a section')
-   return redirect(url_for("home"))
+    if request.method == 'POST':
+        add_section()        
+    return redirect(url_for("home"))
       
-           
+# this function adds item to sections     
+
+    
+
+
+
 
 
 
