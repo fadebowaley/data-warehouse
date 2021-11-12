@@ -391,28 +391,34 @@
         </button>
       </div>
       <div class="modal-body">
-    <form>
-  <div class="input-group mb-3">
+        <form>
+
+        <div class="input-group mb-3">
   <div class="input-group-prepend">
     <label class="input-group-text" for="inputGroupSelect01">Sections </label>
   </div>
   <select class="custom-select" id="inputGroupSelect01">
-   <option selected>choose</option>
-  <option value=""></option>
-  
+
+    <option selected>Choose...</option>
+    <option value="1">Tomatoe Section </option>
+    <option value="1">Fresh Pepper </option>
+    <option value="2">Onion Section </option>
+    <option value="3">Fruit & Vegetables</option>
+    <option value="3">Grains </option>
+    <option value="3">Okro</option>
+
   </select>
 </div>
+
   <div class="input-group mb-3">
   <div class="input-group-prepend">
     <label class="input-group-text" for="inputGroupSelect01">Item name </label>
   </div>
   <select class="custom-select" id="inputGroupSelect01">
-    {% for i in item %}
-  {% if i=='Tomantos' or i=='_id' %}
-  {% else %}
-    <option value="{{ i }}">{{ i }}</option>
-  {% endif %}
-  {% endfor %}
+    <option selected>Choose...</option>
+    <option value="1">Tomatoes</option>
+    <option value="2">Onions</option>
+    <option value="3">Pepper</option>
   </select>
 </div>
   <div class="input-group mb-3">
@@ -499,25 +505,23 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="/add_items" method="POST">
       <div class="modal-body">
-  <div class="input-group mb-3">
         <form action="/add_item" method= 'POST'>
 
       <div class="input-group mb-3">
   <div class="input-group-prepend">
     <label class="input-group-text" for="inputGroupSelect01">Section </label>
   </div>
-  <select class="custom-select"  name="select">
+  <select class="custom-select" id="inputGroupSelect01">
     {% for sections in section %}
-    <option value="{{ sections['Section_name'] }}">{{ sections['Section_name'] }}</option>
+    <option value="6">{{ sections['Section_name'] }}</option>
     {% endfor %}
   </select>
 </div>
 
 <div class="input-group">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="" name="item1">item name </span>
+    <span class="input-group-text" id="">item name </span>
   </div>
   <input type="text" class="form-control" name='item1'>  
 </div>
@@ -526,7 +530,7 @@
 </div>
 <div class="input-group">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="" name="item2">item name </span>
+    <span class="input-group-text" id="">item name </span>
   </div>
   <input type="text" class="form-control" name='item2'>  
 </div>
@@ -535,7 +539,7 @@
 </div>
 <div class="input-group">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="" name="item3">item name </span>
+    <span class="input-group-text" id="">item name </span>
   </div>  
   <input type="text" class="form-control" name='item3'>  
 </div>
@@ -544,7 +548,7 @@
 </div>
 <div class="input-group">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="" name="item4">item name </span>
+    <span class="input-group-text" id="">item name </span>
   </div>  
   <input type="text" class="form-control" name='item4'>  
 </div>
@@ -553,13 +557,15 @@
 </div>
 <div class="input-group">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="" name="item5">item name </span>
+    <span class="input-group-text" id="">item name </span>
   </div>  
   <input type="text" class="form-control" name='item5'>  
 </div>
 <div>
 <br>
 </div>
+
+      
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
