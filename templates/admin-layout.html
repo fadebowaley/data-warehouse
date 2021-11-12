@@ -506,7 +506,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form action="/add_item" method= 'POST'>
 
       <div class="input-group mb-3">
   <div class="input-group-prepend">
@@ -514,7 +514,7 @@
   </div>
   <select class="custom-select" id="inputGroupSelect01">
     {% for sections in section %}
-    <option value="6">{{ sections['Section for items'] }}</option>
+    <option value="6">{{ sections['Section_name'] }}</option>
     {% endfor %}
   </select>
 </div>
@@ -523,7 +523,7 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="">item name </span>
   </div>
-  <input type="text" class="form-control">  
+  <input type="text" class="form-control" name='item1'>  
 </div>
 <div>
 <br>
@@ -532,7 +532,7 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="">item name </span>
   </div>
-  <input type="text" class="form-control">  
+  <input type="text" class="form-control" name='item2'>  
 </div>
 <div>
 <br>
@@ -541,7 +541,7 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="">item name </span>
   </div>  
-  <input type="text" class="form-control">  
+  <input type="text" class="form-control" name='item3'>  
 </div>
 <div>
 <br>
@@ -550,7 +550,7 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="">item name </span>
   </div>  
-  <input type="text" class="form-control">  
+  <input type="text" class="form-control" name='item4'>  
 </div>
 <div>
 <br>
@@ -559,7 +559,7 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="">item name </span>
   </div>  
-  <input type="text" class="form-control">  
+  <input type="text" class="form-control" name='item5'>  
 </div>
 <div>
 <br>
@@ -567,13 +567,13 @@
 
       
       </div>
-        </form>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success">Add report</button>
+        <button type="submit"  class="btn btn-success">Add report</button>
       </div>
     </div>
   </div>
+        </form>
 </div>
 
         <!-- /add report modal-->

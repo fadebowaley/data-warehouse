@@ -52,18 +52,18 @@ def registerUser():
 def add_section():
     section=request.form.get("section")
     market=request.form.get("market")
-    section_items.insert_one({"Section for items":str(section),"Market":str(market),"Date_created":datetime.datetime.now(),"Section":True})
+    section_items.insert_one({"Section_name":str(section),"Market":str(market),"Date_created":datetime.datetime.now(),"Section":True})
             
             
 
-def add_items():
-    fields = [k for k in request.form]                                      
-    values = [request.form[k] for k in request.form]
-    data = dict(zip(fields, values))
-    item_data = json.loads(json_util.dumps(data))
-    print(item_data)
-    items.insert(item_data) 
-    print("Done")
+# def add_items():
+#     fields = [k for k in request.form]                                      
+#     values = [request.form[k] for k in request.form]
+#     data = dict(zip(fields, values))
+#     item_data = json.loads(json_util.dumps(data))
+#     print(item_data)
+#     items.insert(item_data) 
+#     print("Done")
       
             
     
