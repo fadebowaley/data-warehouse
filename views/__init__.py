@@ -2,9 +2,6 @@ from flask import render_template, request, redirect, url_for, session,flash
 from app import app
 from model import *
 
-app.config['SECRET_KEY']=='steve2333'
-
-
 
 @app.route('/', methods=["GET"])
 def home():
@@ -64,20 +61,7 @@ def forgotpassword():
 def errorpage():
     return render_template("404.html")
 
-#Blank Page
-@app.route('/blank', methods=["GET"])
-def blank():
-    return render_template('blank.html')
 
-#Buttons Page
-@app.route('/buttons', methods=["GET"])
-def buttons():
-    return render_template("buttons.html")
-
-#Cards Page
-@app.route('/cards', methods=["GET"])
-def cards():
-    return render_template('cards.html')
 
 #Charts Page
 @app.route('/charts', methods=["GET"])
@@ -90,19 +74,51 @@ def tables():
     return render_template("tables.html")
 
 
+#Tables Page
+@app.route('/table_items', methods=["GET"])
+def table_items():
+    return render_template("table_items.html")
+
+
+#Tables Page
+@app.route('/table_users', methods=["GET"])
+def table_users():
+    return render_template("table_users.html")
+
+
+#Tables Page
+@app.route('/table_sections', methods=["GET"])
+def table_sections():
+    return render_template("table_sections.html")
+
+
 # this function add sections to database
 @app.route('/add_section', methods=['GET','POST'])
 def addsection():
-    if request.method == 'POST':
-        add_section()        
-    return redirect(url_for("home"))
-      
-# this function adds item to sections     
+   if request.method=='POST':
+        add_section()
+        flash('you successfully create a section')
+   return redirect(url_for("home"))
+
+
+
+@app.route('/add_item', methods=['GET','POST'])
+def add_items():
+   if request.method=='POST':         
+        fields = [k for k in request.form]                                      
+        values = [request.form[k] for k in request.form]
+        data = dict(zip(fields, values))
+        items_data = json.loads(json_util.dumps(data))
+        items.insert(items_data)
+        # for key, value in items_data.items():
+        #     if value != '' and key != '':
+        #         print(key,value)                           
+        #     items.insert({key:value})      
+       
+        flash('you successfully create a section')
+   return redirect(url_for("home"))
+
+
+
 
     
-
-
-
-
-
-
